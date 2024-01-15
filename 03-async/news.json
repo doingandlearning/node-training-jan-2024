@@ -1,0 +1,17 @@
+[
+  {
+    "id": "news1",
+    "headline": "News 1 Headline",
+    "content": "This is the content for news 1."
+  },
+  {
+    "id": "news2",
+    "headline": "News 2 Headline",
+    "content": "This is the content for news 2."
+  },
+  {
+    "id": "news3",
+    "headline": "News 3 Headline",
+    "content": "This is the content for news 3."
+  }
+]

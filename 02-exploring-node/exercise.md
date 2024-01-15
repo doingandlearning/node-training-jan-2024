@@ -22,7 +22,7 @@ Keep note of any questions/wonderings/discoveries you have during the exercise s
 
 ### Stage 3: Dynamic Content and Environment Variables
 **Objective:** Introduce dynamic content and environment variables.
-- Install and import the `dotenv` module (or use the --env-file flag)
+- Install and import the `dotenv` module (or use the --env-file flag) 
 - Use an environment variable for the server port.
 - Modify the homepage to include a dynamic message passed as a command-line argument.
 	- This would mean using the process.argv and passing a string on startup e.g. `node server.js "Hello from the BBC!"`
