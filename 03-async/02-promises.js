@@ -30,4 +30,27 @@ Promise.all([userData, regionsData, newsData]).then(([userData, regionsData, new
 		console.log(news.content);
 		console.log("-----");
 	});
+}).catch(error => {
+	console.log("There was an error")
+})
+
+Promise.allSettled([userData, regionsData, newsData]).then((data) => {
+	console.log(data.every(data => data.status === 'fulfilled'))
+	data.forEach(result => {
+		if (result.status === "fulfilled") {
+			console.log(result.value)
+		} else {
+			console.log(result.reason)
+		}
+	})
+	// const userNewsIds = regionsData[userData.region]
+	// const userNews = newsData.filter(article => userNewsIds.includes(article.id))
+
+	// userNews.forEach((news) => {
+	// 	console.log(news.headline);
+	// 	console.log(news.content);
+	// 	console.log("-----");
+	// });
+}).catch(error => {
+	console.log("There was an error")
 })
