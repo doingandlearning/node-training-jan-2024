@@ -13,13 +13,16 @@ async function fetchPlanetAsync(url) {
   return response.json();
 }
 
-(async () => {
+async function main() {
   try {
-    const person = await fetchPersonAsync();
+    const person = await fetchPersonAsync(); // .then()
     console.log("Person:", person.name);
-    const planet = await fetchPlanetAsync(person.homeworld);
+    const planet = await fetchPlanetAsync(person.homeworld); // .then()
     console.log("Homeworld:", planet.name);
+
   } catch (error) {
     console.error("Error:", error);
   }
-})();
+}
+
+main()
