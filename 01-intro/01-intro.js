@@ -18,3 +18,7 @@ run(0)
 // node --eval ""
 
 // node --watch     // nodemon
+
+// git pull
+
+// --watch
