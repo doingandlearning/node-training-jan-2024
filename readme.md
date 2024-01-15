@@ -4,9 +4,18 @@
 - Kevin Cunningham (https://kevincunningham.co.uk)
 - Miro Link: https://miro.com/app/board/uXjVN6DT57A=/?share_link_id=839685896471
 
+```bash
+git clone https://github.com/doingandlearning/node-training-jan-2024
+```
+
+```bash
+git pull
+```
+
+
 # Timings:
 
-| | |
+| | |             
 | --- | --- |
 | 9.30 - 11 | Session 1 |
 | 11 - 11.15 | Coffee |
@@ -15,8 +24,6 @@
 | 1.45 - 3.15 | Session 3 |
 | 3.15 - 3.30 | Coffee |
 | 3.30 - 4.30 | Session 4 | 
-
-
 
 
 ## Day 1: Build an API with Core Node modules
