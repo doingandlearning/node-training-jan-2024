@@ -16,6 +16,4 @@ c) Using async/await.
 
 Ensure you handle any potential errors at each step, including handling cases where a person or planet does not exist. You can simulate longer delays using `setTimeout` to make the asynchrony more noticeable.
 
-*Bonus*: Make the fetch request abortable. If the request takes longer than 5 seconds, it should be aborted.
-
-
+_Bonus_: Make the fetch request abortable. If the request takes longer than 5 seconds, it should be aborted.

@@ -31,3 +31,10 @@ async function run() {
 run();
 
 
+
+const user = fetch("url1")
+const data2 = fetch("url1")
+const data3 = fetch("url1")
+const data4 = fetch("url1")
+
+const responses = await Promise.all([user, data2, data3, data4])

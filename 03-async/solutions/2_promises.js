@@ -1,15 +1,15 @@
-function getRandomInt(max: number): number {
+function getRandomInt(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
-function fetchPersonPromise(): Promise<any> {
+function fetchPersonPromise() {
   const randomId = getRandomInt(83);
   return fetch(`https://swapi.dev/api/people/${randomId}/`).then((response) =>
     response.json()
   );
 }
 
-function fetchPlanetPromise(url: string): Promise<any> {
+function fetchPlanetPromise(url) {
   return fetch(url).then((response) => response.json());
 }
 

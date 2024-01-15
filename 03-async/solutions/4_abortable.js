@@ -1,13 +1,13 @@
-function getRandomInt(max: number): number {
+function getRandomInt(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
-async function fetchPlanetAsync(url: string): Promise<any> {
+async function fetchPlanetAsync(url) {
   const response = await fetch(url);
   return response.json();
 }
 
-async function fetchPersonAsyncTimeout(): Promise<any> {
+async function fetchPersonAsyncTimeout() {
   const randomId = getRandomInt(83);
   const controller = new AbortController();
   const timeout = setTimeout(() => {
@@ -26,10 +26,7 @@ async function fetchPersonAsyncTimeout(): Promise<any> {
   }
 }
 
-type FetchError = {
-  name?: string;
-  message: string;
-};
+
 // Use this new function in the async/await example:
 (async () => {
   try {
@@ -39,7 +36,7 @@ type FetchError = {
     console.log("Homeworld:", planet.name);
   } catch (error) {
     // Narrow down the error type using a type guard
-    const err = error as FetchError;
+    const err = error;
     if (err.name === "AbortError") {
       console.error("Request aborted due to timeout");
     } else {
