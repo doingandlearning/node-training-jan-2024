@@ -4,6 +4,8 @@ import userRoutes from "./users/users.routes.js"
 
 const app = express()
 
+app.use(express.json())
+
 app.get("/", (req, res) => res.send({ message: "Hello!" }))
 
 app.use("/api/v1/users", userRoutes)
