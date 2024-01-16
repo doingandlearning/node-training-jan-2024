@@ -1,12 +1,8 @@
-import { setTimeout } from "timers/promises"
 
 export async function fakeFetch(url) {
-	await setTimeout(400);
-	// http://error.com 
+	await new Promise(resolve => setTimeout(resolve, 400));
 	if (url === "http://error.com") {
-		throw new Error("network error")
+		throw new Error("network error");
 	}
-
-	return Buffer.from("some data")
-
+	return Buffer.from("some data");
 }
