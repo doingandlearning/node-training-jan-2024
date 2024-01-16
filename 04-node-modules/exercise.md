@@ -35,7 +35,7 @@
 
 ### **Task 2: Create Modules and Functions**
 
-1. Inside the `src` directory, create a new file called `mathFunctions.ts`:
+1. Inside the `src` directory, create a new file called `mathFunctions.js`:
 
     ```js
     // src/mathFunctions.js
@@ -49,10 +49,10 @@
     }
     ```
 
-2. Inside the `src` directory, create another file called `main.ts`:
+2. Inside the `src` directory, create another file called `main.js`:
 
     ```js
-    // src/main.ts
+    // src/main.js
 
     import { add, subtract } from './mathFunctions';
 
