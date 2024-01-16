@@ -1,10 +1,11 @@
 import { Router } from "express";
+import { getAllUsers } from "./users.controllers.js";
 
 const router = Router();
 
 // GET /users/
 // POST /users/
-router.get("/", (req, res) => res.send("Not implemented yet."));
+router.get("/", getAllUsers);
 router.post("/", (req, res) => res.send("Not implemented yet."));
 
 // GET /users/:id

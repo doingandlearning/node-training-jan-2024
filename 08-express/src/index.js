@@ -1,18 +1,14 @@
 import express from "express"
 
+import userRoutes from "./users/users.routes.js"
+
 const app = express()
 
 app.get("/", (req, res) => res.send({ message: "Hello!" }))
+
+app.use("/api/v1/users", userRoutes)
 
 app.listen(3000, () => {
 	console.log("Server started. http://localhost:3000")
 })
 
-// /controllers/users.controllers.js
-// /routes/users.routes.js
-// /models/users.models.js
-
-
-// /resources/users/users.controllers.js
-// /resources/users/users.routes.js
-// /resources/users/users.models.js
