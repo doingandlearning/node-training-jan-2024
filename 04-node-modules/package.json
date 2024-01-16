@@ -1,0 +1,23 @@
+{
+  "name": "my-super-useful-package",
+  "version": "0.0.1",
+  "description": "This does lots of super useful things.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "",
+    "start": "",
+    "build": ""
+  },
+  "keywords": [
+    "useful",
+    "amazing",
+    "super"
+  ],
+  "author": "Kevin Cunningham",
+  "license": "ISC",
+  "dependencies": {
+    "pino": "^8.17.2"
+  },
+   "type": "module"
+}
