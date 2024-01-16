@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-   
+  "dependencies": {
+    "vitest": "^1.2.0"
   }
 }
