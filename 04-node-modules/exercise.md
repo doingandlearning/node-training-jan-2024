@@ -80,3 +80,4 @@
 
 1. Expand the `mathFunctions.js` module by adding functions for multiplication and division.
 2. Import and use these new functions in the `main.js` module, then compile and run to see the results.
+3. Add pino and the logging.
