@@ -14,6 +14,7 @@ test("throws when i don't pass numbers", () => {
 	// Given   - Arrange
 	// When   - Act
 	// Then   - Assert
+
 	expect(() => multiply(true, [])).toThrow()
 	expect(() => multiply(true, [])).toThrowErrorMatchingInlineSnapshot(`[Error: Both parameters must be numbers.]`)
 	expect(() => multiply(true, 2)).toThrowErrorMatchingSnapshot()

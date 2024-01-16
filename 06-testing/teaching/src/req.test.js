@@ -2,14 +2,15 @@ import { describe, test, expect, vi } from 'vitest';
 import { fakeFetch } from './req.js';
 
 describe('fakeFetch tests', () => {
-	// Use fake timers
+	// // Use fake timers
 	vi.useFakeTimers();
 
 	test("responds with data", async () => {
 		const fakeFetchPromise = fakeFetch("https://goodurl.com");
 
-		// Advance timers
+		// // Advance timers
 		vi.runAllTimers();
+
 
 		const response = await fakeFetchPromise;
 		expect(Buffer.isBuffer(response)).toBe(true);
@@ -22,6 +23,8 @@ describe('fakeFetch tests', () => {
 			const fakeFetchPromise = fakeFetch("http://error.com");
 			vi.runAllTimers();
 			await fakeFetchPromise;
+			console.log("I will never run!")
+			throw new Error("Should never be called")
 		} catch (error) {
 			// Expect an error to be thrown
 			expect(error).toBeDefined();
