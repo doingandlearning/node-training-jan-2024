@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createNewUser, getAllUsers, getById, updateUser } from "./users.controllers.js";
+import { createNewUser, deleteUser, getAllUsers, getById, updateUser } from "./users.controllers.js";
 
 const router = Router();
 
@@ -15,6 +15,6 @@ router
 	.route("/:id")
 	.get(getById)
 	.patch(updateUser)
-	.delete((req, res) => res.send("Not implemented yet."));
+	.delete(deleteUser);
 
 export default router;
