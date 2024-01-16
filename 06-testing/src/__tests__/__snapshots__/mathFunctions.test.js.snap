@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`throws when i don't pass numbers 2`] = `[Error: Both parameters must be numbers.]`;
