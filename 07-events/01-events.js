@@ -20,9 +20,15 @@ ee.prependListener(events.smile, () => {
 	console.log("I noticed you were smiling first!")
 })
 
-ee.on(events.smile, (reason) => {
+const reasonFunction = (reason) => {
 	console.log(`I see you are smiling - is it because ${reason.toLowerCase()}`)
-})
+}
+
+// function 
+
+ee.on(events.smile, reasonFunction)
+
+ee.removeListener(events.smile, reasonFunction)
 
 
 ee.emit(events.smile, "It's snowing.")
@@ -42,4 +48,3 @@ ee.on("error", (error) => {
 })
 
 ee.emit("error")
-// no returning?
