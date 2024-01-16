@@ -8,8 +8,8 @@
 
 1. Initialize a new directory for your project:
    ```bash
-   mkdir ts-node-modules
-   cd ts-node-modules
+   mkdir student
+   cd student
    ```
 
 2. Initialize a new Node.js project and install the necessary packages:
