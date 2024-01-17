@@ -4,6 +4,8 @@
 - Kevin Cunningham (https://kevincunningham.co.uk)
 - Miro Link: https://miro.com/app/board/uXjVN6DT57A=/?share_link_id=839685896471
 - Feedback Link: https://frameworktraining.typeform.com/to/t9jrAdn4
+
+
 ```bash
 git clone https://github.com/doingandlearning/node-training-jan-2024
 ```
