@@ -3,10 +3,10 @@ import { Transform, TransformCallback } from "node:stream";
 
 const upperCaseTransform = new Transform({
   transform(
-    chunk: Buffer,
-    encoding: string,
-    callback: TransformCallback
-  ): void {
+    chunk,
+    encoding,
+    callback
+  ) {
     this.push(chunk.toString().toUpperCase());
     callback();
   },
@@ -22,10 +22,10 @@ readableStream
     console.log("Finished writing to the file.");
   });
 
-readableStream.on("error", (err: NodeJS.ErrnoException) => {
+readableStream.on("error", (err) => {
   console.error("Error reading file:", err);
 });
 
-writableStream.on("error", (err: NodeJS.ErrnoException) => {
+writableStream.on("error", (err) => {
   console.error("Error writing file:", err);
 });
