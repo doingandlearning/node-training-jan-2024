@@ -2,21 +2,25 @@ const users = [];
 
 // middleware
 export async function getAllUsers(req, res, next) {
-	res.send(users)
+	// res.send(users)
+	next(new Error("Something went wrong"))
 }
 
-export function createNewUser(req, res) {
-	const user = req.body;
+export function createNewUser(req, res, next) {
+	try {
+		const user = req.body;
 
-	if (!user.name || !user.team) {
-		return res
-			.status(400)
-			.send({ error: true, message: "You need to send team and name." })
+		if (!user.name || !user.team) {
+			return next(new Error("You need to send the name and team."))
+		}
+
+		user.id = users.length + 1;
+		users.push(user)
+		res.send(users)
+
+	} catch (error) {
+
 	}
-
-	user.id = users.length + 1;
-	users.push(user)
-	res.send(users)
 }
 
 export function getById(req, res) {
