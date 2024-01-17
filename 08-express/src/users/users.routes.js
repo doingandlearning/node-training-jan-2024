@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { createNewUser, deleteUser, getAllUsers, getById, updateUser } from "./users.controllers.js";
-
+import logging from "../middlewares/logging.js";
 const router = Router();
-
+router.use(logging)
 // GET /users/
 // POST /users/
 router.get("/", getAllUsers);
