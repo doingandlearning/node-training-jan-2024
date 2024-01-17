@@ -9,11 +9,6 @@ export async function getAllUsers(req, res, next) {
 export function createNewUser(req, res, next) {
 	try {
 		const user = req.body;
-
-		if (!user.name || !user.team) {
-			return next(new Error("You need to send the name and team."))
-		}
-
 		user.id = users.length + 1;
 		users.push(user)
 		res.send(users)

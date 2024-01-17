@@ -9,9 +9,9 @@ export function createNewTask(req, res, next) {
 	try {
 		const task = req.body;
 
-		if (!task.name || !task.team) {
-			return next(new Error("You need to send the name and team."))
-		}
+		// if (!task.name || !task.team) {
+		// 	return next(new Error("You need to send the name and team."))
+		// }
 
 		task.id = tasks.length + 1;
 		tasks.push(task)
