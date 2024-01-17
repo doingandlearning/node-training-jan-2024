@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createNewUser, deleteUser, getAllUsers, getById, updateUser } from "./users.controllers.js";
+import { createNewUser, deleteUser, findUsersByTeam, getAllUsers, getById, updateUser } from "./users.controllers.js";
 import logging from "../middlewares/logging.js";
 import auth from "../middlewares/auth.js";
 const router = Router();
@@ -17,5 +17,7 @@ router
 	.get(getById)
 	.patch(auth, updateUser)
 	.delete(auth, deleteUser);
+
+router.get("/team/:teamName", findUsersByTeam)
 
 export default router;

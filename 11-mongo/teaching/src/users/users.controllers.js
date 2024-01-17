@@ -1,70 +1,83 @@
-const users = [];
+import User from "./users.models.js"
 
 // middleware
 export async function getAllUsers(req, res, next) {
-	res.send(users)
+	try {
+		const users = await User.find();
+		res.send(users);
+	} catch (error) {
+		next(error);
+	}
 }
 
-export function createNewUser(req, res, next) {
+export async function createNewUser(req, res, next) {
 	try {
-		const user = req.body;
-
-		if (!user.name || !user.team) {
+		if (!req.body.name || !req.body.team) {
 			return next(new Error("You need to send the name and team."))
 		}
 
-		user.id = users.length + 1;
-		users.push(user)
+		const user = new User(req.body)
+		await user.save();
 		res.status(201).send(user)
 
 	} catch (error) {
-
+		next(error)
 	}
 }
 
-export function getById(req, res) {
-	const id = Number(req.params.id)
-	const user = users.find(user => user.id === id)
-
-	if (!user) {
-		return res.status(404).send({ message: "User not found." })
-	}
-	res.send(user)
-}
-
-export function updateUser(req, res) {
-	const userBody = req.body;
-
-	const currentUserIndex = users.findIndex(user => user.id === req.params.id)
-
-	if (currentUserIndex === -1) {
-		return res.status(404).send({ message: "User not found." })
-	}
-
-	users[currentUserIndex] = {
-		...users[currentUserIndex],
-		...userBody
-	}
-
-	res.send(users[currentUserIndex])
-
-}
-
-
-export function deleteUser(req, res) {
+export async function getById(req, res) {
 	try {
-		const userId = parseInt(req.params.id);
-		const userIndex = users.findIndex((u) => u.id === userId);
+		const user = await User.findById(req.params.id)
 
-		if (userIndex === -1) {
+		if (!user) {
+			return res.status(404).send({ message: "User not found." })
+		}
+		res.send(user)
+	} catch (error) {
+		next(error)
+	}
+}
+
+export async function updateUser(req, res) {
+	try {
+		const user = await User.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{ new: true }
+		)
+		if (!user) {
+			return res.status(404).send({ message: "User not found." })
+		}
+		res.send(user)
+	} catch (error) {
+		next(error)
+	}
+}
+
+
+export async function deleteUser(req, res) {
+	try {
+		const user = await User.findByIdAndDelete(req.params.id)
+
+		if (!user) {
 			return res.status(404).json({ message: "User not found" });
 		}
-
-		users.splice(userId, 1);
 
 		res.status(204).send();
 	} catch (error) {
 		console.log(error);
 		res.status(400).json({ message: "Something went wrong" });
+	}
+}
+
+// /users/team/:teamName
+
+export async function findUsersByTeam(req, res) {
+	try {
+		console.log("Here")
+		const users = await User.find({ team: req.params.teamName })
+		res.send(users)
+	} catch (error) {
+		next(error)
 	}
 }
