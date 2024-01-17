@@ -4,6 +4,7 @@ import userRoutes from "./users/users.routes.js"
 
 const app = express()
 
+// Allows to read the JSON body of a request
 app.use(express.json())
 
 app.get("/", (req, res) => res.send({ message: "Hello!" }))

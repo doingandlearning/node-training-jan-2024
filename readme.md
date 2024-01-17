@@ -45,7 +45,8 @@ git pull
 
 ## Day 3: Refactor API to have a persistent backend
 
+- Express pt2
 - Buffers and Streams
 - Error handling
-- Interacting with the file system
+- Interacting with the file system <- Node APIs
 - Node.js and Databases

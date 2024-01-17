@@ -1,6 +1,7 @@
 const users = [];
 
-export function getAllUsers(req, res) {
+// middleware
+export async function getAllUsers(req, res, next) {
 	res.send(users)
 }
 
