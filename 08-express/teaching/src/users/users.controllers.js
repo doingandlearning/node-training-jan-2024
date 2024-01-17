@@ -2,8 +2,7 @@ const users = [];
 
 // middleware
 export async function getAllUsers(req, res, next) {
-	// res.send(users)
-	next(new Error("Something went wrong"))
+	res.send(users)
 }
 
 export function createNewUser(req, res, next) {
@@ -16,7 +15,7 @@ export function createNewUser(req, res, next) {
 
 		user.id = users.length + 1;
 		users.push(user)
-		res.send(users)
+		res.status(201).send(user)
 
 	} catch (error) {
 
@@ -36,13 +35,7 @@ export function getById(req, res) {
 export function updateUser(req, res) {
 	const userBody = req.body;
 
-	if (!userBody.id) {
-		return res
-			.status(400)
-			.send({ error: true, message: "You need to pass an id." })
-	}
-
-	const currentUserIndex = users.findIndex(user => user.id === userBody.id)
+	const currentUserIndex = users.findIndex(user => user.id === req.params.id)
 
 	if (currentUserIndex === -1) {
 		return res.status(404).send({ message: "User not found." })
