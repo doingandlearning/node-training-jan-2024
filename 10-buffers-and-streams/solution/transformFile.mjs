@@ -1,5 +1,5 @@
 import { createReadStream, createWriteStream } from "node:fs";
-import { Transform, TransformCallback } from "node:stream";
+import { Transform } from "node:stream";
 
 const upperCaseTransform = new Transform({
   transform(
