@@ -37,3 +37,22 @@ try {
 	}
 }
 
+class BBCError extends Error {
+	constructor(message, code) {
+		super(message);
+		// this = new Error("Error message")
+		this.name = "BBCError";
+		this.message = ""
+		this.code = code
+	}
+}
+
+const newError = new BBCError("Error message", "ERR_CODE")
+
+
+// new Error(message)
+//
+
+// Object -> Error -> BBCError  // Prototypical Inheritance
+
+// this
